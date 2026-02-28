@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adarsh & Supriya - A Royal Celebration</title>
+    <title>Adarsh & Supriya - A Royal Rajputana Celebration</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
 
         body {
             background-color: #070913;
@@ -35,6 +35,7 @@
             font-family: var(--font-text);
             overflow-x: hidden;
             line-height: 1.6;
+            width: 100%;
         }
 
         /* --- ROYAL SILK CURTAIN ENTRY --- */
@@ -52,7 +53,7 @@
         .curtain {
             position: absolute;
             top: 0;
-            width: 50.5%;
+            width: 51%;
             height: 100%;
             background: var(--dark-maroon);
             background-image: linear-gradient(90deg, 
@@ -69,8 +70,8 @@
             z-index: 10001;
         }
 
-        .curtain-left { left: 0; border-right: 3px solid var(--gold); box-shadow: 15px 0 40px rgba(0,0,0,0.9); }
-        .curtain-right { right: 0; border-left: 3px solid var(--gold); box-shadow: -15px 0 40px rgba(0,0,0,0.9); }
+        .curtain-left { left: 0; border-right: 3px solid var(--gold); }
+        .curtain-right { right: 0; border-left: 3px solid var(--gold); }
 
         .slit-glow {
             position: absolute;
@@ -95,41 +96,42 @@
             text-align: center;
             transition: opacity 0.8s;
             width: 90%;
+            padding: 20px;
         }
 
         .bhai-intro-text {
             font-family: var(--font-heading);
             color: var(--gold);
-            font-size: clamp(1.2rem, 4vw, 2.2rem);
+            font-size: clamp(1.2rem, 5vw, 2.5rem);
             letter-spacing: 5px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-shadow: 0 0 20px rgba(0,0,0,1);
             text-transform: uppercase;
             font-weight: 700;
         }
 
         .enter-btn {
-            padding: 22px 70px;
+            padding: clamp(15px, 3vw, 22px) clamp(30px, 8vw, 70px);
             font-family: var(--font-heading);
             background: radial-gradient(circle, var(--light-gold), var(--gold));
             color: #000;
             border: 3px solid var(--ivory);
             border-radius: 60px;
             cursor: pointer;
-            font-size: 1.4rem;
+            font-size: clamp(1rem, 4vw, 1.4rem);
             font-weight: 900;
-            letter-spacing: 5px;
+            letter-spacing: 3px;
             box-shadow: 0 0 50px rgba(212, 175, 55, 1);
             transition: 0.4s;
+            margin-top: 10px;
         }
-
-        .enter-btn:hover { transform: scale(1.05); box-shadow: 0 0 70px var(--gold); }
 
         /* --- MANDAP & CHANDELIER --- */
         .mandap-top {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 280px;
-            background: linear-gradient(to bottom, var(--dark-maroon) 40%, transparent);
+            top: 0; left: 0; width: 100%; height: auto;
+            min-height: 200px;
+            background: linear-gradient(to bottom, var(--dark-maroon) 30%, transparent);
             z-index: 15;
             display: flex;
             justify-content: center;
@@ -138,8 +140,9 @@
 
         .chandelier-container {
             position: relative;
-            width: 250px;
-            height: 300px;
+            width: clamp(150px, 30vw, 250px);
+            height: auto;
+            aspect-ratio: 5/6;
             z-index: 16;
             animation: chandelierSwing 6s infinite ease-in-out alternate;
             transform-origin: top center;
@@ -148,18 +151,19 @@
         .chandelier-img {
             width: 100%; height: 100%;
             object-fit: contain;
-            filter: drop-shadow(0 0 25px var(--gold));
+            filter: drop-shadow(0 0 20px var(--gold));
         }
 
         .strip-lights {
             position: absolute;
             top: 0; width: 100%; height: 10px;
             display: flex; justify-content: space-around;
-            padding: 0 10%; z-index: 17;
+            padding: 0 5%; z-index: 17;
         }
 
         .light-bulb {
-            width: 10px; height: 10px;
+            width: clamp(6px, 1.5vw, 12px); 
+            height: clamp(6px, 1.5vw, 12px);
             background: #fff; border-radius: 50%;
             box-shadow: 0 0 15px #fff, 0 0 30px var(--gold);
             animation: twinkle 1s infinite alternate;
@@ -173,80 +177,79 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 40px;
-            margin-bottom: 25px;
+            gap: clamp(15px, 4vw, 40px);
+            margin-bottom: 20px;
         }
 
         .hindi-calligraphy {
             font-family: var(--font-hindi);
-            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            font-size: clamp(1.5rem, 5vw, 3.2rem);
             color: var(--gold);
             font-weight: 700;
-            text-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
         }
 
         .sacred-image-placeholder {
-            width: 150px; height: 150px;
+            width: clamp(90px, 20vw, 150px); 
+            height: clamp(90px, 20vw, 150px);
             border-radius: 50%;
             background: radial-gradient(circle, var(--gold) 0%, #B8860B 100%);
-            border: 5px solid var(--ivory);
+            border: 4px solid var(--ivory);
             display: flex; justify-content: center; align-items: center;
-            box-shadow: 0 0 60px rgba(212, 175, 55, 1);
+            box-shadow: 0 0 50px rgba(212, 175, 55, 1);
             animation: sacredPulse 4s infinite ease-in-out;
             overflow: hidden;
-            background-size: cover;
-            background-position: center;
         }
-        
-        .om-symbol { font-family: var(--font-hindi); font-size: 5rem; color: #000; font-weight: 900; }
+        .om-symbol { font-family: var(--font-hindi); font-size: clamp(3rem, 10vw, 5rem); color: #000; font-weight: 900; }
 
         @keyframes sacredPulse {
             0%, 100% { transform: scale(1); filter: brightness(1); }
-            50% { transform: scale(1.06); filter: brightness(1.2); }
+            50% { transform: scale(1.05); filter: brightness(1.2); }
         }
 
         .names-font {
             font-family: var(--font-names);
-            font-size: clamp(3.5rem, 12vw, 7.2rem);
+            font-size: clamp(3rem, 12vw, 7.5rem);
             background: linear-gradient(to bottom, var(--ivory) 20%, var(--gold) 50%, var(--light-gold) 80%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1.2; /* Better spacing for names */
-            filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.5));
-            margin: 20px 0;
+            line-height: 1.2;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+            margin: 15px 0;
             display: block;
         }
 
         /* --- HERO SECTION --- */
         .hero {
             position: relative;
-            min-height: 130vh; /* Increased to ensure names aren't cut */
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 300px 20px 100px; /* Massive top padding to clear chandelier */
+            padding: clamp(150px, 25vh, 300px) 15px 80px; 
             overflow: hidden;
         }
 
         .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; z-index: 1; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(7, 9, 19, 0) 0%, rgba(7, 9, 19, 0.98) 100%); z-index: 2; }
 
-        .hero-content { position: relative; z-index: 20; width: 100%; max-width: 900px; animation: fadeInZoom 2s ease-out; perspective: 2000px; }
+        .hero-content { position: relative; z-index: 20; width: 100%; max-width: 950px; animation: fadeInZoom 2s ease-out; perspective: 2000px; }
 
         .hero-special-card {
             background: linear-gradient(165deg, rgba(35, 50, 85, 0.98), rgba(7, 9, 19, 0.95));
             backdrop-filter: blur(45px);
             border: 3px solid var(--gold);
-            border-radius: 80px 80px 220px 220px;
-            padding: 100px 40px 100px 40px; 
-            box-shadow: 0 100px 200px rgba(0, 0, 0, 1), inset 0 0 150px rgba(212, 175, 55, 0.1);
+            border-radius: 60px 60px clamp(120px, 30vw, 220px) clamp(120px, 30vw, 220px);
+            padding: clamp(60px, 10vw, 100px) 20px clamp(60px, 10vw, 100px); 
+            box-shadow: 0 50px 150px rgba(0, 0, 0, 1), inset 0 0 100px rgba(212, 175, 55, 0.1);
             position: relative;
             transform-style: preserve-3d;
         }
 
         .caricature-wrapper {
             position: relative;
-            width: 250px; height: 250px;
+            width: clamp(180px, 40vw, 260px); 
+            height: clamp(180px, 40vw, 260px);
             margin: 0 auto 30px auto;
             border-radius: 50%;
             display: flex; justify-content: center; align-items: center;
@@ -254,12 +257,12 @@
         }
 
         .caricature-ring { position: absolute; width: 100%; height: 100%; border: 2px dashed rgba(212, 175, 55, 0.6); border-radius: 50%; animation: spinSlow 40s linear infinite; }
-        .caricature-img-placeholder img { width: 220px; height: 220px; object-fit: contain; filter: drop-shadow(0 20px 50px rgba(0,0,0,0.9)); animation: floatImg 4s infinite ease-in-out; }
-        @keyframes floatImg { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .caricature-img-placeholder img { width: 85%; height: 85%; object-fit: contain; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.9)); animation: floatImg 4s infinite ease-in-out; }
+        @keyframes floatImg { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 
-        /* --- BOTTOM IMAGE PLACEHOLDER --- */
+        /* --- BOTTOM IMAGE SECTION --- */
         .bottom-gallery-section {
-            padding: 120px 20px;
+            padding: clamp(60px, 10vw, 120px) 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -272,76 +275,99 @@
             width: 100%;
             max-width: 1100px;
             height: auto;
-            min-height: 550px;
+            aspect-ratio: 16/9;
+            min-height: 250px;
             border: 4px solid var(--gold);
             background: rgba(255,255,255,0.03);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 80px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.2);
             position: relative;
             overflow: hidden;
             border-radius: 30px;
-            margin-top: 40px;
         }
 
         .bottom-image-plaque::before {
             content: '';
             position: absolute;
-            top: 20px; left: 20px; right: 20px; bottom: 20px;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
             border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 20px;
             pointer-events: none;
         }
 
-        .bottom-image-plaque img { width: 100%; height: 100%; object-fit: cover; }
         .bottom-image-plaque::after {
             content: 'GRAND RECEPTION MOMENTS';
             font-family: var(--font-heading);
             color: var(--gold);
-            font-size: 1.5rem;
-            letter-spacing: 8px;
+            font-size: clamp(0.8rem, 3vw, 1.5rem);
+            letter-spacing: 5px;
             opacity: 0.6;
             text-align: center;
             padding: 20px;
         }
 
         /* --- OTHER SECTIONS --- */
-        .reveal { opacity: 0; transform: translateY(50px); transition: 1.5s ease-out; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1.2s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         .royal-plaque {
             background: rgba(255,255,255,0.03);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(212, 175, 55, 0.4);
-            border-radius: 50px;
+            border-radius: 40px;
             max-width: 950px;
-            padding: 100px 60px;
+            padding: clamp(40px, 8vw, 100px) clamp(20px, 5vw, 60px);
             text-align: center;
-            margin: 100px auto;
-            box-shadow: 0 50px 120px rgba(0,0,0,0.6);
+            margin: 80px auto;
+            width: 90%;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.6);
         }
 
-        .scroll-card { background: rgba(10, 10, 20, 0.98); backdrop-filter: blur(30px); padding: 100px 60px; border-radius: 40px; max-width: 900px; text-align: center; border: 4px double var(--gold); box-shadow: 0 60px 150px rgba(0,0,0,1); margin: 0 auto; }
+        .scroll-card { 
+            background: rgba(10, 10, 20, 0.98); 
+            backdrop-filter: blur(30px); 
+            padding: clamp(40px, 8vw, 100px) clamp(20px, 5vw, 60px); 
+            border-radius: 40px; 
+            max-width: 900px; 
+            width: 90%;
+            text-align: center; 
+            border: 4px double var(--gold); 
+            box-shadow: 0 50px 120px rgba(0,0,0,1); 
+            margin: 0 auto; 
+        }
 
-        .event-card { background: rgba(15, 20, 40, 0.95); backdrop-filter: blur(20px); padding: 60px 40px; border-radius: 60px; border: 2px solid var(--gold); transition: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); box-shadow: 0 40px 80px rgba(0,0,0,0.8); text-align: center; }
-        .event-card:hover { transform: translateY(-25px); border-color: var(--light-gold); box-shadow: 0 0 60px rgba(212, 175, 55, 0.3); }
+        .event-card { 
+            background: rgba(15, 20, 40, 0.95); 
+            backdrop-filter: blur(20px); 
+            padding: 40px 20px; 
+            border-radius: 50px; 
+            border: 1.5px solid var(--gold); 
+            transition: 0.5s ease; 
+            text-align: center;
+        }
+        .event-card:hover { transform: translateY(-15px); border-color: var(--light-gold); }
 
-        .map-btn { display: inline-block; margin-top: 30px; padding: 18px 45px; background: linear-gradient(45deg, var(--gold), var(--light-gold)); color: #000; text-decoration: none; border-radius: 60px; font-weight: 900; font-size: 1.1rem; }
+        .map-btn { display: inline-block; margin-top: 25px; padding: 15px 35px; background: linear-gradient(45deg, var(--gold), var(--light-gold)); color: #000; text-decoration: none; border-radius: 50px; font-weight: 900; font-size: 0.9rem; }
 
-        footer { background: #000; padding: 120px 20px; text-align: center; border-top: 2px solid rgba(212, 175, 55, 0.3); position: relative; z-index: 5; }
+        footer { background: #000; padding: 80px 20px; text-align: center; border-top: 2px solid rgba(212, 175, 55, 0.3); position: relative; z-index: 5; }
 
-        @keyframes fadeInZoom { from { opacity: 0; transform: scale(0.9) translateY(50px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        @keyframes fadeInZoom { from { opacity: 0; transform: scale(0.95) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
         @keyframes spinSlow { 100% { transform: rotate(360deg); } }
 
-        @media (max-width: 768px) {
-            .hero { padding: 250px 15px 80px; }
-            .header-top-ornament { gap: 15px; }
-            .sacred-image-placeholder { width: 110px; height: 110px; }
-            .names-font { font-size: 3.5rem; line-height: 1.4; }
-            .bottom-image-plaque { min-height: 350px; }
-            .enter-btn { padding: 18px 45px; font-size: 1.1rem; }
+        /* Effects Canvas */
+        #effects-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 10; }
+
+        /* Custom responsive fixes for the festivities grid */
+        .festivities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(20px, 4vw, 50px);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
     </style>
 </head>
@@ -359,7 +385,7 @@
         </div>
     </div>
 
-    <canvas id="effects-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 10;"></canvas>
+    <canvas id="effects-canvas"></canvas>
 
     <!-- Mandap Top with Chandelier -->
     <div class="mandap-top">
@@ -370,8 +396,7 @@
                 <div class="light-bulb"></div><div class="light-bulb"></div><div class="light-bulb"></div>
             </div>
             <div class="chandelier-container">
-                <!-- Chandelier Placeholder -->
-                <img src="chanddlier.jpg" alt="Royal Chandelier" class="chandelier-img">
+                <img src="https://www.pngall.com/wp-content/uploads/5/Luxury-Chandelier-PNG-File.png" alt="Royal Chandelier" class="chandelier-img">
             </div>
         </div>
     </div>
@@ -380,7 +405,7 @@
         <source src="music.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="audio-control" id="audio-btn" title="Play/Pause Music" style="position: fixed; bottom: 30px; right: 30px; background: var(--gold); color: #000; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 9999; box-shadow: 0 10px 30px rgba(0,0,0,0.5); font-size: 30px; transition: 0.3s;">🔇</div>
+    <div class="audio-control" id="audio-btn" title="Play/Pause Music" style="position: fixed; bottom: 30px; right: 30px; background: var(--gold); color: #000; width: clamp(50px, 10vw, 65px); height: clamp(50px, 10vw, 65px); border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 9999; box-shadow: 0 10px 30px rgba(0,0,0,0.5); font-size: clamp(20px, 4vw, 30px); transition: 0.3s;">🔇</div>
 
     <!-- 1. HERO SECTION -->
     <section class="hero" id="home">
@@ -392,11 +417,9 @@
         <div class="hero-content">
             <div class="hero-special-card" id="hero-tilt-card">
                 
-                <!-- SACRED TOP SECTION -->
                 <div class="header-top-ornament">
                     <span class="hindi-calligraphy">शुभ</span>
                     <div class="sacred-image-placeholder" title="Add Ganesh Image Here">
-                        <!-- Replace <span> with <img src="ganesh.png"> when ready -->
                         <span class="om-symbol">ॐ</span>
                     </div>
                     <span class="hindi-calligraphy">विवाह</span>
@@ -405,43 +428,42 @@
                 <div class="caricature-wrapper">
                     <div class="caricature-ring"></div>
                     <div class="caricature-img-placeholder">
-                        <!-- Caricature Placeholder -->
-                        <img src="carriature.jpeg" alt="Couple Caricature">
+                        <img src="carriature.jpeg" alt="Couple Caricature" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3788/3788604.png'">
                     </div>
                 </div>
 
                 <div style="text-align: center;">
-                    <span style="font-family: var(--font-heading); color: var(--gold); letter-spacing: 8px; font-weight: 900; margin-bottom: 5px; display: block;">#SuDarsh</span>
-                    <h1 class="names-font" id="couple-names">Adarsh ❤️ Supriya</h1>
+                    <span style="font-family: var(--font-heading); color: var(--gold); letter-spacing: clamp(4px, 1vw, 8px); font-weight: 900; margin-bottom: 5px; display: block; font-size: clamp(0.8rem, 2vw, 1.1rem);">#SuDarsh</span>
+                    <h1 class="names-font">Adarsh ❤️ Supriya</h1>
                 </div>
                 
-                <p style="font-size: 1.7rem; color: var(--ivory); font-style: italic; margin-top: 30px; text-shadow: 0 2px 4px #000; text-align: center;">
+                <p style="font-size: clamp(1rem, 3vw, 1.6rem); color: var(--ivory); font-style: italic; margin-top: 20px; text-shadow: 0 2px 4px #000; text-align: center;">
                     Welcomed with love by<br>
-                    <span style="color: var(--gold); font-family: var(--font-heading); font-size: 2.8rem; display: block; margin-top: 10px; font-weight: 700; letter-spacing: 3px;">The Patel Family</span>
+                    <span style="color: var(--gold); font-family: var(--font-heading); font-size: clamp(1.5rem, 5vw, 2.6rem); display: block; margin-top: 10px; font-weight: 700; letter-spacing: 2px;">The Patel Family</span>
                 </p>
                 
-                <p style="color: var(--light-gold); font-size: 1.2rem; margin-top: 70px; letter-spacing: 5px; font-weight: 700; text-shadow: 0 0 20px rgba(255, 215, 0, 0.6); text-transform: uppercase;">✨ Special Invitation from Dulhe ka Bhai ✨</p>
+                <p style="color: var(--light-gold); font-size: clamp(0.8rem, 2.5vw, 1.15rem); margin-top: 50px; letter-spacing: 3px; font-weight: 700; text-shadow: 0 0 20px rgba(255, 215, 0, 0.6); text-transform: uppercase;">✨ Special Invitation from Dulhe ka Bhai ✨</p>
             </div>
         </div>
     </section>
 
     <!-- 2. SACRED UNION PLAQUE -->
-    <section class="welcome-card-section reveal">
+    <section class="reveal">
         <div class="royal-plaque">
-            <p style="font-size: 2.2rem; color: var(--ivory); font-style: italic; line-height: 2;">
+            <p style="font-size: clamp(1.2rem, 4vw, 2rem); color: var(--ivory); font-style: italic; line-height: 1.8;">
                 "With the blessings of our elders and immense joy in our hearts,<br> 
                 we invite you to witness the union of<br> 
-                <strong style="color: var(--gold); font-family: var(--font-heading); font-size: 3rem; letter-spacing: 3px;">Adarsh and Supriya</strong><br> 
+                <strong style="color: var(--gold); font-family: var(--font-heading); font-size: clamp(1.8rem, 6vw, 2.8rem); letter-spacing: 2px;">Adarsh and Supriya</strong><br> 
                 as they embark on a journey of love, tradition, and forever."
             </p>
         </div>
     </section>
 
     <!-- 3. BHAI INVITATION -->
-    <section class="bhai-special-section reveal">
+    <section class="reveal" style="margin-bottom: 80px;">
         <div class="scroll-card">
-            <h4 style="font-family: var(--font-heading); color: var(--gold); letter-spacing: 8px; font-size: 1.6rem; margin-bottom: 50px; text-transform: uppercase;">Invitation from Dulhe ka Bhai</h4>
-            <p>
+            <h4 style="font-family: var(--font-heading); color: var(--gold); letter-spacing: 5px; font-size: clamp(1rem, 3vw, 1.4rem); margin-bottom: 30px; text-transform: uppercase;">Invitation from Dulhe ka Bhai</h4>
+            <p style="font-size: clamp(1.2rem, 4vw, 1.7rem); font-style: italic; color: var(--ivory); line-height: 1.8;">
                 "With a heart full of happiness,<br><br>
                 I warmly invite you to join us<br>
                 as Adarsh and Supriya start this beautiful new chapter of their lives together.<br>
@@ -453,9 +475,9 @@
     </section>
 
     <!-- 4. SCHEDULE -->
-    <section class="details reveal" style="padding: 120px 20px;">
-        <h2 style="font-size: 4rem; margin-bottom: 80px; color: var(--gold); text-align: center; font-family: var(--font-heading);">Festivities</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; max-width: 1400px; margin: 0 auto;">
+    <section class="details reveal">
+        <h2 style="font-size: clamp(2rem, 8vw, 3.8rem); margin-bottom: 50px; color: var(--gold); text-align: center; font-family: var(--font-heading);">Festivities</h2>
+        <div class="festivities-grid">
             <div class="event-card"><h3>Haldi</h3><p>Mar 16, 2026 | 10:00 AM</p><p style="color: var(--gold); font-weight: 900; margin-top: 10px;">Theme: Golden Glow</p><a href="https://maps.app.goo.gl/5JGR6N6Wsa3SWmc96" class="map-btn">Location</a></div>
             <div class="event-card"><h3>Sangeet</h3><p>Mar 16, 2026 | 6:00 PM</p><p style="color: var(--gold); font-weight: 900; margin-top: 10px;">Theme: Nebula Night</p><a href="https://maps.app.goo.gl/5JGR6N6Wsa3SWmc96" class="map-btn">Location</a></div>
             <div class="event-card"><h3>Wedding</h3><p>Mar 17, 2026 | 6:00 PM</p><p style="color: var(--gold); font-weight: 900; margin-top: 10px;">Theme: Pastel</p><a href="https://maps.app.goo.gl/5JGR6N6Wsa3SWmc96" class="map-btn">Location</a></div>
@@ -465,7 +487,7 @@
 
     <!-- 5. BOTTOM PHOTO SECTION -->
     <section class="bottom-gallery-section reveal">
-        <h2 style="font-family: var(--font-heading); color: var(--gold); margin-bottom: 20px; font-size: 3rem; letter-spacing: 8px;">Family & Memories</h2>
+        <h2 style="font-family: var(--font-heading); color: var(--gold); margin-bottom: 30px; font-size: clamp(1.8rem, 6vw, 3rem); letter-spacing: 5px; text-align: center;">Family & Memories</h2>
         <div class="bottom-image-plaque" title="Reception/Family Photo Placeholder">
             <!-- <img src="reception.jpg" alt="Family Photo"> -->
         </div>
@@ -473,34 +495,34 @@
 
     <!-- 6. COUNTDOWN -->
     <section class="countdown-section reveal">
-        <h2 style="font-size: 3.5rem; margin-bottom: 60px; color: var(--gold);">Royal Countdown</h2>
-        <div style="display: flex; justify-content: center; gap: 35px; flex-wrap: wrap;">
-            <div class="time-box"><span id="days">00</span><p style="font-size:0.9rem; color:var(--gold); letter-spacing:2px; font-weight:bold;">Days</p></div>
-            <div class="time-box"><span id="hours">00</span><p style="font-size:0.9rem; color:var(--gold); letter-spacing:2px; font-weight:bold;">Hours</p></div>
-            <div class="time-box"><span id="minutes">00</span><p style="font-size:0.9rem; color:var(--gold); letter-spacing:2px; font-weight:bold;">Mins</p></div>
-            <div class="time-box"><span id="seconds">00</span><p style="font-size:0.9rem; color:var(--gold); letter-spacing:2px; font-weight:bold;">Secs</p></div>
+        <h2 style="font-size: clamp(2rem, 6vw, 3.2rem); margin-bottom: 50px; color: var(--gold);">Royal Countdown</h2>
+        <div style="display: flex; justify-content: center; gap: clamp(15px, 4vw, 35px); flex-wrap: wrap;">
+            <div class="time-box"><span id="days" style="font-size: clamp(1.8rem, 5vw, 3rem);">00</span><p style="font-size:0.7rem; color:var(--gold); letter-spacing:2px;">Days</p></div>
+            <div class="time-box"><span id="hours" style="font-size: clamp(1.8rem, 5vw, 3rem);">00</span><p style="font-size:0.7rem; color:var(--gold); letter-spacing:2px;">Hours</p></div>
+            <div class="time-box"><span id="minutes" style="font-size: clamp(1.8rem, 5vw, 3rem);">00</span><p style="font-size:0.7rem; color:var(--gold); letter-spacing:2px;">Mins</p></div>
+            <div class="time-box"><span id="seconds" style="font-size: clamp(1.8rem, 5vw, 3rem);">00</span><p style="font-size:0.7rem; color:var(--gold); letter-spacing:2px;">Secs</p></div>
         </div>
     </section>
 
-    <footer>
-        <h2 style="font-family: var(--font-heading); color: var(--gold); font-size: 3.2rem; margin-bottom: 10px;">The Patel Family</h2>
-        <p style="font-style: italic; color: var(--ivory); opacity: 0.8; font-size: 1.5rem;">With Royal Regards,</p>
-        <p style="font-family: var(--font-heading); color: var(--gold); font-size: 2.2rem; margin-top: 15px;">Dulhe ka Bhai</p>
-        <div style="color: var(--gold); font-size: 4.5rem; margin: 40px 0; animation: heartbeat 1.5s infinite; cursor: pointer;">♥</div>
-        <p style="font-size: 2.4rem; letter-spacing: 6px;">WAITING FOR YOU ❤️</p>
+    <footer style="padding: 100px 20px;">
+        <h2 style="font-family: var(--font-heading); color: var(--gold); font-size: clamp(1.8rem, 6vw, 3rem); margin-bottom: 10px;">The Patel Family</h2>
+        <p style="font-style: italic; color: var(--ivory); opacity: 0.8; font-size: clamp(1rem, 3vw, 1.3rem);">With Royal Regards,</p>
+        <p style="font-family: var(--font-heading); color: var(--gold); font-size: clamp(1.4rem, 4vw, 2rem); margin-top: 15px;">Dulhe ka Bhai</p>
+        <div style="color: var(--gold); font-size: clamp(3rem, 10vw, 4.5rem); margin: 30px 0; animation: heartbeat 1.5s infinite; cursor: pointer;">♥</div>
+        <p style="font-size: clamp(1.5rem, 5vw, 2.2rem); letter-spacing: 3px;">WAITING FOR YOU ❤️</p>
     </footer>
 
     <script>
         function startExperience() {
             document.getElementById('entry-overlay').classList.add('hidden');
             const audio = document.getElementById('bg-music');
-            audio.play().catch(e => console.log("Audio play blocked: " + e));
+            audio.play().catch(e => console.log("Audio interaction required: " + e));
             setTimeout(() => { document.getElementById('entry-overlay').style.display = 'none'; }, 2600);
         }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.05 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         const targetDate = new Date("Mar 16, 2026 10:00:00").getTime();
@@ -527,7 +549,7 @@
         function init() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            diyas = Array.from({length: 15}, () => ({
+            diyas = Array.from({length: 12}, () => ({
                 x: Math.random() * canvas.width, y: canvas.height + Math.random() * 500,
                 s: Math.random() * 5 + 5, v: Math.random() * 0.4 + 0.3, w: Math.random() * 0.015
             }));
